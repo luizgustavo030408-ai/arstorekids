@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AR Kids | Moda Infantil em Boa Vista - RR</title>
+<meta name="theme-color" content="#FFF6EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141B2E" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="AR Kids">
+<meta property="og:title" content="AR Kids | Moda Infantil em Boa Vista - RR">
+<meta property="og:description" content="Roupas, calçados e acessórios para meninas e meninos. Av. General Ataíde Teive, 5461 – Cambará, Boa Vista – RR.">
+<meta name="description" content="AR Kids — moda infantil em Boa Vista, RR. Av. General Ataíde Teive, 5461 — Cambará.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,100,1&family=Nunito:wght@400;600;700;800&family=Gochi+Hand&display=swap">
+<style>
+/* Layout: um quarto infantil ao entardecer — arcos da loja como molduras, teto ondulado como divisor, estrelas como pontuação */
+:root{
+  --bg:#FFF6EE;          /* creme da parede */
+  --bg-2:#FBE3CF;        /* pêssego claro */
+  --peach:#F3B98A;       /* parede pêssego */
+  --apricot:#E3A05E;     /* dourado do "AR" */
+  --sky:#8FC6D6;         /* azul do "KI" */
+  --rose:#E7A3BC;        /* rosa do "DS" */
+  --navy:#1E2B47;        /* parede azul do lado dos meninos */
+  --wood:#D9B184;        /* mesas de madeira */
+  --ink:#2A2230;         /* texto */
+  --ink-soft:#6E5F66;
+  --card:#FFFFFF;
+  --line:rgba(42,34,48,.12);
+  --wa:#1F9D55;
+  --shadow:0 18px 40px -22px rgba(120,62,20,.45);
+  --f-display:"Fraunces", "Iowan Old Style", Georgia, serif;
+  --f-body:"Nunito", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-hand:"Gochi Hand", "Comic Sans MS", cursive;
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  --blob-a:#F6C49B; --blob-b:#A9D3E0; --blob-c:#EFB7CB; --blob-bg:#FFF4EA; --star:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#141B2E; --bg-2:#1B2540; --peach:#F0B482; --apricot:#EDB070; --sky:#93CBDB; --rose:#EBA9C1;
+  --navy:#0E1424; --wood:#C59D70; --ink:#F7ECE2; --ink-soft:#BFB1B3; --card:#1E2943;
+  --line:rgba(255,240,225,.14); --wa:#2BB566; --shadow:0 18px 40px -22px rgba(0,0,0,.8);
+  --blob-a:#3B3550; --blob-b:#20456A; --blob-c:#4A2E4E; --blob-bg:#121A2C; --star:#FFE3B8;
+  color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#141B2E; --bg-2:#1B2540; --peach:#F0B482; --apricot:#EDB070; --sky:#93CBDB; --rose:#EBA9C1;
+  --navy:#0E1424; --wood:#C59D70; --ink:#F7ECE2; --ink-soft:#BFB1B3; --card:#1E2943;
+  --line:rgba(255,240,225,.14); --wa:#2BB566; --shadow:0 18px 40px -22px rgba(0,0,0,.8);
+  --blob-a:#3B3550; --blob-b:#20456A; --blob-c:#4A2E4E; --blob-bg:#121A2C; --star:#FFE3B8;
+  color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+h1,h2,h3{font-family:var(--f-display);font-variation-settings:"SOFT" 100,"WONK" 1;font-weight:500;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.eyebrow{font-family:var(--f-hand);font-size:1.35rem;color:var(--apricot);line-height:1;display:inline-flex;align-items:center;gap:.4em}
+.eyebrow svg{width:18px;height:18px;fill:currentColor}
+p{margin:0}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:.14em;font-size:.78rem;text-transform:uppercase;color:var(--ink-soft)}
+.brand img{width:44px;height:44px;border-radius:50%;box-shadow:0 0 0 1px var(--line)}
+.nav-links{display:flex;gap:8px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-family:var(--f-body);font-weight:800;font-size:.95rem;text-decoration:none;border-radius:999px;padding:.85em 1.35em;border:0;cursor:pointer;transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s,background .25s;white-space:nowrap}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 10px 24px -12px var(--wa)}
+.btn-ig{background:var(--ink);color:var(--bg)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn:hover{transform:translateY(-2px) scale(1.02)}
+.btn:active{transform:scale(.97)}
+.nav .btn{padding:.6em 1em;font-size:.85rem}
+.icon-btn{width:40px;height:40px;padding:0;border-radius:50%}
+@media (max-width:520px){.brand span{display:none}.nav .btn-wa .lbl{display:none}.nav .btn-wa{width:40px;height:40px;padding:0}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;isolation:isolate;background:var(--blob-bg)}
+#sky{position:absolute;inset:0;width:100%;height:100%;z-index:-1;display:block}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:56px 72px}
+.hero-copy{min-width:0;display:flex;flex-direction:column;gap:22px}
+.logo-badge{width:132px;height:132px;border-radius:50%;background:#fff;box-shadow:var(--shadow),0 0 0 8px color-mix(in srgb,#fff 45%,transparent);overflow:hidden}
+.logo-badge img{width:100%;height:100%}
+.hero h1{font-size:clamp(2.6rem,7.2vw,5.4rem);font-weight:450}
+.hero h1 em{font-style:italic;color:var(--apricot);font-weight:400}
+.hero h1 .w{display:inline-block}
+.lede{font-size:1.12rem;color:var(--ink-soft);max-width:34ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.addr-chip{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.88rem;color:var(--ink-soft)}
+.addr-chip svg{width:16px;height:16px;fill:var(--rose)}
+.arch-hero{position:relative;justify-self:center;width:min(100%,440px)}
+.arch{border-radius:999px 999px 28px 28px;overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow);border:8px solid #fff;aspect-ratio:3/4;max-width:100%}
+.arch img{width:100%;height:118%;object-fit:cover;will-change:transform}
+.sticker{position:absolute;font-family:var(--f-hand);background:#fff;color:#2A2230;padding:.45em .9em;border-radius:14px;box-shadow:0 10px 22px -14px rgba(0,0,0,.4);font-size:1.1rem;line-height:1.1;white-space:nowrap}
+.sticker.s1{left:-22px;bottom:16%;transform:rotate(-6deg)}
+.sticker.s2{right:-14px;top:18%;transform:rotate(5deg);background:var(--sky);color:#14303A}
+.star-deco{position:absolute;width:46px;height:46px;fill:var(--apricot);filter:drop-shadow(0 6px 10px rgba(227,160,94,.45))}
+.star-deco.a{right:10%;top:-10px}
+.star-deco.b{left:6%;top:30%;width:26px;height:26px;fill:var(--rose)}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:36px 56px;gap:34px}
+  .logo-badge{width:108px;height:108px}
+  .arch-hero{width:min(86%,380px)}
+  .sticker.s1{left:-10px}.sticker.s2{right:-8px}
+}
+
+/* wavy ceiling divider */
+.wave{display:block;width:100%;height:56px;margin-top:-1px}
+.wave path{fill:var(--bg)}
+
+/* ---------- Marcas ---------- */
+.brands{padding-block:28px 8px;overflow:hidden}
+.brands-label{font-weight:800;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--ink-soft);text-align:center;margin-bottom:14px}
+.marquee{display:flex;gap:0;width:max-content;will-change:transform}
+.marquee span{font-family:var(--f-display);font-variation-settings:"SOFT" 100,"WONK" 1;font-size:clamp(1.8rem,4.4vw,3rem);font-weight:400;padding-inline:.6em;display:inline-flex;align-items:center;gap:.6em;color:var(--ink)}
+.marquee span::after{content:"";width:.5em;height:.5em;background:var(--rose);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.marquee span:nth-child(3n+2)::after{background:var(--sky)}
+.marquee span:nth-child(3n)::after{background:var(--apricot)}
+
+/* ---------- Seções ---------- */
+section{padding-block:72px}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:34px;max-width:640px}
+.sec-head h2{font-size:clamp(2.1rem,5vw,3.6rem)}
+.sec-head p{color:var(--ink-soft);max-width:52ch}
+
+/* Galeria em arcos */
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;align-items:end}
+.g-item{position:relative;margin:0;min-width:0}
+.g-item .frame{overflow:hidden;background:var(--bg-2);box-shadow:var(--shadow)}
+.g-item img{width:100%;height:115%;object-fit:cover;will-change:transform}
+.g-item figcaption{font-family:var(--f-hand);font-size:1.2rem;color:var(--ink-soft);margin-top:10px;padding-left:6px}
+.g1{grid-column:1/6}.g1 .frame{border-radius:999px 999px 24px 24px;aspect-ratio:3/4}
+.g2{grid-column:6/13}.g2 .frame{border-radius:24px;aspect-ratio:4/3.4}
+.g3{grid-column:1/8}.g3 .frame{border-radius:24px;aspect-ratio:4/3.4}
+.g4{grid-column:8/13}.g4 .frame{border-radius:999px 999px 24px 24px;aspect-ratio:3/4}
+.g5{grid-column:3/11}.g5 .frame{border-radius:200px 200px 24px 24px;aspect-ratio:16/10}
+.g-item .frame{max-width:100%}
+@media (max-width:760px){
+  .gallery{grid-template-columns:1fr 1fr;gap:12px}
+  .g1,.g4{grid-column:span 1}
+  .g2,.g3,.g5{grid-column:1/-1}
+  .g-item figcaption{font-size:1.05rem}
+}
+
+/* Divisão meninas / meninos */
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.side{border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.side h3{font-size:1.9rem}
+.side p{font-size:.98rem}
+.side.girls{background:color-mix(in srgb,var(--peach) 38%,var(--bg));}
+.side.boys{background:color-mix(in srgb,var(--sky) 30%,var(--bg));}
+.side .tag{font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+@media (max-width:620px){.sides{grid-template-columns:1fr}}
+
+/* Looks */
+.looks-band{background:var(--navy);color:#FBEFE4;position:relative;overflow:hidden}
+.looks-band .sec-head p{color:#D7C8C2}
+.looks-band .eyebrow{color:var(--peach)}
+.looks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.look{background:#FFF8F1;color:#2A2230;border-radius:26px;padding:10px 10px 18px;display:flex;flex-direction:column;gap:12px;min-width:0;transform-style:preserve-3d;transition:box-shadow .3s}
+.look .ph{border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#EEE6DE}
+.look .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.look:hover .ph img{transform:scale(1.06)}
+.look h3{font-size:1.45rem;padding-inline:8px}
+.look p{font-size:.92rem;color:#6E5F66;padding-inline:8px}
+.look .btn{margin-inline:8px;align-self:flex-start;font-size:.88rem;padding:.7em 1.1em}
+.looks-band .stars{position:absolute;inset:0;pointer-events:none;opacity:.55}
+@media (max-width:860px){.looks{grid-template-columns:1fr 1fr}.looks .look:last-child{grid-column:1/-1}.looks .look:last-child .ph{aspect-ratio:16/11}}
+@media (max-width:540px){.looks{grid-template-columns:1fr}.looks .look:last-child .ph{aspect-ratio:4/5}}
+
+/* Embalagem */
+.gift{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
+.gift .frame{border-radius:30px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);transform:rotate(-2.5deg);max-width:100%}
+.gift .frame img{width:100%;height:100%;object-fit:cover}
+.gift-copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+.gift-copy h2{font-size:clamp(2rem,4.6vw,3.3rem)}
+.gift-copy p{color:var(--ink-soft);max-width:46ch}
+@media (max-width:760px){.gift{grid-template-columns:1fr;gap:30px}.gift .frame{width:min(88%,380px);justify-self:center}}
+
+/* Visite */
+.visit{background:var(--bg-2);border-radius:36px;padding:clamp(24px,5vw,56px);display:grid;grid-template-columns:1.2fr 1fr;gap:36px;position:relative;overflow:hidden}
+.visit h2{font-size:clamp(2.2rem,5vw,3.8rem)}
+.visit-info{display:flex;flex-direction:column;gap:22px;min-width:0}
+.info-row{display:flex;gap:14px;align-items:flex-start}
+.info-row .ico{width:44px;height:44px;border-radius:50%;background:var(--card);display:grid;place-items:center;flex:none;box-shadow:0 0 0 1px var(--line)}
+.info-row .ico svg{width:20px;height:20px}
+.info-row .lbl{font-weight:800;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.info-row .val{font-size:1.08rem;font-weight:700;user-select:all;overflow-wrap:anywhere}
+.copy{background:none;border:0;color:var(--apricot);font:inherit;font-weight:800;font-size:.85rem;cursor:pointer;padding:2px 0;text-decoration:underline;text-underline-offset:3px}
+.visit-actions{display:flex;flex-direction:column;gap:10px;justify-content:center;min-width:0}
+.visit-actions .btn{width:100%;padding-block:1.05em;font-size:1rem}
+@media (max-width:760px){.visit{grid-template-columns:1fr}}
+
+/* Footer */
+footer{padding-block:40px calc(28px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);margin-top:72px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.f-brand{display:flex;gap:12px;align-items:center;font-size:.9rem;color:var(--ink-soft)}
+.f-brand img{width:52px;height:52px;border-radius:50%;box-shadow:0 0 0 1px var(--line)}
+.credit{font-size:.88rem;color:var(--ink-soft)}
+.credit a{font-weight:800;color:var(--ink);text-decoration:none;background:linear-gradient(var(--apricot),var(--apricot)) 0 100%/100% 2px no-repeat;padding-bottom:2px}
+.credit a:hover{background-size:100% 100%;color:#fff}
+
+/* WhatsApp flutuante */
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);transition:transform .25s}
+.fab svg{width:30px;height:30px;fill:#fff}
+.fab:hover{transform:scale(1.08) rotate(-6deg)}
+.fab::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--wa);opacity:.4;animation:ping 2.4s ease-out infinite;z-index:-1}
+@keyframes ping{0%{transform:scale(1);opacity:.45}80%,100%{transform:scale(1.7);opacity:0}}
+
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.7em 1.2em;border-radius:999px;font-weight:800;font-size:.9rem;z-index:70}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+/* reset base */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 1.8l2.9 6.6 7.2.7-5.4 4.8 1.6 7.1L12 17.3 5.7 21l1.6-7.1L1.9 9.1l7.2-.7z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.05c-.24.68-1.41 1.3-1.95 1.35-.5.05-.97.23-3.27-.68-2.76-1.09-4.5-3.91-4.64-4.09-.13-.18-1.1-1.47-1.1-2.8 0-1.33.7-1.98.95-2.25.25-.27.54-.34.72-.34h.52c.17 0 .4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.35-.41.47-.14.14-.28.28-.12.56.16.27.71 1.18 1.53 1.91 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.18.69-.8.88-1.08.18-.27.36-.23.62-.14.25.09 1.6.76 1.88.9.27.14.46.2.52.32.07.11.07.65-.17 1.33Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 2.8h10A4.2 4.2 0 0 1 21.2 7v10a4.2 4.2 0 0 1-4.2 4.2H7A4.2 4.2 0 0 1 2.8 17V7A4.2 4.2 0 0 1 7 2.8Z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 19a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm12-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM9 16h6.5a3.5 3.5 0 0 0 0-7H15"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo"><img src="img/logo-redonda.png" alt="AR Kids"><span>Boa Vista · RR</span></a>
+    <nav class="nav-links" aria-label="Contato">
+      <a class="btn btn-ghost icon-btn" href="https://www.instagram.com/arkidsrr/" target="_blank" rel="noopener" aria-label="Instagram @arkidsrr"><svg><use href="#i-ig"/></svg></a>
+      <a class="btn btn-wa" href="https://wa.me/5595991186571?text=Ol%C3%A1%2C%20AR%20Kids!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span class="lbl">WhatsApp</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero" style="padding-block:0">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="logo-badge" id="logoBadge"><img src="img/logo-redonda.png" alt="Logo AR Kids"></div>
+        <span class="eyebrow"><svg><use href="#i-star"/></svg>Moda infantil em Boa Vista</span>
+        <h1 id="heroTitle"><span class="w">O</span> <span class="w">guarda-roupa</span> <span class="w">dos</span> <em class="w">sonhos</em> <span class="w">virou</span> <span class="w">realidade.</span></h1>
+        <p class="lede">Roupas, calçados e acessórios para meninas e meninos, das marcas que as famílias amam, numa loja pensada para criança se sentir em casa.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa" href="https://wa.me/5595991186571?text=Ol%C3%A1%2C%20AR%20Kids!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+          <a class="btn btn-ig" href="https://www.instagram.com/arkidsrr/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@arkidsrr</a>
+        </div>
+        <span class="addr-chip"><svg><use href="#i-pin"/></svg>Av. General Ataíde Teive, 5461 · Cambará</span>
+      </div>
+      <div class="arch-hero" id="archHero">
+        <svg class="star-deco a"><use href="#i-star"/></svg>
+        <svg class="star-deco b"><use href="#i-star"/></svg>
+        <div class="arch"><img data-par src="img/loja-geral.jpg" alt="Interior da AR Kids com araras de roupas infantis em arcos pêssego"></div>
+        <span class="sticker s1">Sabadou por aí?!</span>
+        <span class="sticker s2">Loja nova ✦</span>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 56V30C180 6 360 0 540 18s360 36 540 18S1300 4 1440 22v34Z"/></svg>
+  </section>
+
+  <div class="brands" aria-label="Marcas">
+    <p class="brands-label">Marcas que você encontra aqui</p>
+    <div class="marquee" id="marquee">
+      <span>Divertto</span><span>Urban Joy</span><span>Trick Nick</span><span>Johnny Fox</span><span>Infanti</span>
+      <span aria-hidden="true">Divertto</span><span aria-hidden="true">Urban Joy</span><span aria-hidden="true">Trick Nick</span><span aria-hidden="true">Johnny Fox</span><span aria-hidden="true">Infanti</span>
+    </div>
+  </div>
+
+  <section id="loja">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow"><svg><use href="#i-star"/></svg>Por dentro da loja</span>
+        <h2>Arcos, estrelas no teto e madeira por todo lado.</h2>
+        <p>Cada canto foi desenhado para os pequenos explorarem enquanto a família escolhe com calma.</p>
+      </div>
+      <div class="gallery">
+        <figure class="g-item g1"><div class="frame"><img data-par src="img/loja-arcos.jpg" alt="Vestidos e conjuntos de menina expostos em nichos em arco" loading="lazy"></div><figcaption>o lado das meninas</figcaption></figure>
+        <figure class="g-item g2"><div class="frame"><img data-par src="img/loja-meninos.jpg" alt="Parede com camisas polo, bermudas e calças de menino" loading="lazy"></div><figcaption>e o dos meninos</figcaption></figure>
+        <figure class="g-item g3"><div class="frame"><img data-par src="img/loja-meninas.jpg" alt="Vestidos bordados azul-marinho e sandálias douradas sobre mesa de madeira" loading="lazy"></div><figcaption>vestidos bordados e sandálias</figcaption></figure>
+        <figure class="g-item g4"><div class="frame"><img data-par src="img/loja-parede.jpg" alt="Manequim infantil com camisa listrada entre araras" loading="lazy"></div><figcaption>polos, linhos e listras</figcaption></figure>
+        <figure class="g-item g5"><div class="frame"><img data-par src="img/loja-geral.jpg" alt="Visão geral da loja com prateleiras de calçados iluminadas" loading="lazy"></div><figcaption>calçados, bonés e acessórios</figcaption></figure>
+      </div>
+      <div class="sides">
+        <div class="side girls"><span class="tag">Meninas</span><h3>Babados, bordados e tons doces</h3><p>Vestidos, conjuntos, saias de tule, sandálias e bolsinhas.</p></div>
+        <div class="side boys"><span class="tag">Meninos</span><h3>Polos, bermudas e tênis</h3><p>Do look de sábado à roupa de festa, com relógio e boné para completar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="looks-band" id="looks">
+    <canvas class="stars" id="stars" aria-hidden="true"></canvas>
+    <div class="wrap" style="position:relative">
+      <div class="sec-head">
+        <span class="eyebrow"><svg><use href="#i-star"/></svg>Looks montados</span>
+        <h2>Do cabide pro passeio.</h2>
+        <p>Combinações prontas que saem nos nossos stories. Gostou de alguma? Consulte valores e tamanhos pelo WhatsApp.</p>
+      </div>
+      <div class="looks">
+        <article class="look"><div class="ph"><img src="img/look-polo.jpg" alt="Polo marrom com zíper, bermuda branca, tênis camurça e relógio" loading="lazy"></div><h3>Polo café &amp; bermuda branca</h3><p>Polo texturizada com zíper, tênis de camurça e relógio.</p><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/5595991186571?text=Ol%C3%A1%2C%20AR%20Kids!%20Quero%20saber%20valores%20e%20tamanhos%20do%20look%20polo%20caf%C3%A9%20com%20bermuda%20branca."><svg><use href="#i-wa"/></svg>Consultar</a></article>
+        <article class="look"><div class="ph"><img src="img/look-hilfiger.jpg" alt="Camiseta azul-marinho Hilfiger, bermuda bege, tênis e relógio" loading="lazy"></div><h3>Marinho &amp; bege</h3><p>Camiseta estampada, bermuda de sarja e tênis tricolor.</p><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/5595991186571?text=Ol%C3%A1%2C%20AR%20Kids!%20Quero%20saber%20valores%20e%20tamanhos%20do%20look%20marinho%20com%20bermuda%20bege."><svg><use href="#i-wa"/></svg>Consultar</a></article>
+        <article class="look"><div class="ph"><img src="img/look-boss.jpg" alt="Camiseta preta, calça bege dobrada, tênis listrado e relógio" loading="lazy"></div><h3>Preto &amp; calça areia</h3><p>Camiseta básica, calça com barra dobrada e tênis de listras.</p><a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/5595991186571?text=Ol%C3%A1%2C%20AR%20Kids!%20Quero%20saber%20valores%20e%20tamanhos%20do%20look%20camiseta%20preta%20com%20cal%C3%A7a%20areia."><svg><use href="#i-wa"/></svg>Consultar</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap gift">
+      <div class="frame" id="giftFrame"><img src="img/sacola.jpg" alt="Sacola da AR Kids com papel de seda estampado com a logo" loading="lazy"></div>
+      <div class="gift-copy">
+        <span class="eyebrow"><svg><use href="#i-star"/></svg>Embalado com carinho</span>
+        <h2>Cada compra sai como presente.</h2>
+        <p>Sacola da casa e papel de seda com a nossa marca. Se for para dar de presente, é só avisar no caixa.</p>
+        <div class="cta-row"><a class="btn btn-ig" href="https://www.instagram.com/arkidsrr/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Ver novidades no Instagram</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visite" style="padding-top:0">
+    <div class="wrap">
+      <div class="visit">
+        <div class="visit-info">
+          <span class="eyebrow"><svg><use href="#i-star"/></svg>Venha conhecer</span>
+          <h2>A gente te espera no Cambará.</h2>
+          <div class="info-row"><div class="ico"><svg style="fill:var(--rose)"><use href="#i-pin"/></svg></div><div><div class="lbl">Endereço</div><div class="val" id="addr">Av. General Ataíde Teive, 5461/7 – Cambará, Boa Vista – RR</div><button class="copy" data-copy="addr" type="button">Copiar endereço</button></div></div>
+          <div class="info-row"><div class="ico" style="color:var(--wa)"><svg><use href="#i-phone"/></svg></div><div><div class="lbl">WhatsApp</div><div class="val" id="tel">(95) 99118-6571</div><button class="copy" data-copy="tel" type="button">Copiar número</button></div></div>
+          <div class="info-row"><div class="ico" style="color:var(--apricot)"><svg><use href="#i-ig"/></svg></div><div><div class="lbl">Instagram</div><div class="val">@arkidsrr</div></div></div>
+        </div>
+        <div class="visit-actions">
+          <a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/5595991186571?text=Ol%C3%A1%2C%20AR%20Kids!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento."><svg><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+          <a class="btn btn-ig" target="_blank" rel="noopener" href="https://www.instagram.com/arkidsrr/"><svg><use href="#i-ig"/></svg>Seguir no Instagram</a>
+          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20General%20Ata%C3%ADde%20Teive%2C%205461%20Cambar%C3%A1%20Boa%20Vista%20RR"><svg><use href="#i-route"/></svg>Traçar rota no Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand"><img src="img/logo-redonda.png" alt=""><div><strong style="color:var(--ink)">AR Kids</strong><br>Boa Vista · Roraima</div></div>
+    <p class="credit">Desenvolvido por <a href="https://www.instagram.com/vendora_labs/" target="_blank" rel="noopener">Vendora Labs</a></p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5595991186571?text=Ol%C3%A1%2C%20AR%20Kids!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." target="_blank" rel="noopener" aria-label="Chamar a AR Kids no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  /* ---------- Céu de bolhas (shader) ---------- */
+  const canvas = document.getElementById('sky');
+  let uniforms = null, renderer, scene, camera, heroVisible = true;
+  function colorsFromTokens(){
+    if(!uniforms) return;
+    uniforms.uBg.value.set(css('--blob-bg'));
+    uniforms.uA.value.set(css('--blob-a'));
+    uniforms.uB.value.set(css('--blob-b'));
+    uniforms.uC.value.set(css('--blob-c'));
+    uniforms.uStar.value.set(css('--star'));
+  }
+  try{
+    if(!window.THREE) throw 0;
+    renderer = new THREE.WebGLRenderer({canvas, antialias:false, alpha:false, powerPreference:'low-power'});
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+    scene = new THREE.Scene();
+    camera = new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+    uniforms = {
+      uTime:{value:0}, uRes:{value:new THREE.Vector2(1,1)}, uMouse:{value:new THREE.Vector2(.7,.5)},
+      uBg:{value:new THREE.Color()}, uA:{value:new THREE.Color()}, uB:{value:new THREE.Color()},
+      uC:{value:new THREE.Color()}, uStar:{value:new THREE.Color()}
+    };
+    colorsFromTokens();
+    const mat = new THREE.ShaderMaterial({
+      uniforms,
+      vertexShader:`varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }`,
+      fragmentShader:`
+        precision mediump float;
+        varying vec2 vUv;
+        uniform float uTime; uniform vec2 uRes; uniform vec2 uMouse;
+        uniform vec3 uBg,uA,uB,uC,uStar;
+        float hash(vec2 p){ return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }
+        float noise(vec2 p){ vec2 i=floor(p), f=fract(p); vec2 u=f*f*(3.-2.*f);
+          return mix(mix(hash(i),hash(i+vec2(1,0)),u.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),u.x),u.y); }
+        float blob(vec2 p, vec2 c, float r){ float d=length(p-c); return smoothstep(r, r*.15, d); }
+        // estrela de 5 pontas (SDF)
+        float sdStar(vec2 p, float r, float rf){
+          const vec2 k1=vec2(0.809016994375,-0.587785252292);
+          const vec2 k2=vec2(-k1.x,k1.y);
+          p.x=abs(p.x); p-=2.0*max(dot(k1,p),0.0)*k1; p-=2.0*max(dot(k2,p),0.0)*k2;
+          p.x=abs(p.x); p.y-=r;
+          vec2 ba=rf*vec2(-k1.y,k1.x)-vec2(0,1);
+          float h=clamp(dot(p,ba)/dot(ba,ba),0.0,r);
+          return length(p-ba*h)*sign(p.y*ba.x-p.x*ba.y);
+        }
+        void main(){
+          float asp=uRes.x/uRes.y;
+          vec2 p=vUv; p.x*=asp;
+          vec2 m=uMouse; m.x*=asp;
+          float t=uTime*.18;
+          vec2 w=p+.08*vec2(noise(p*2.2+t),noise(p*2.2-t+4.));
+          vec3 col=uBg;
+          float a=blob(w,vec2(.18*asp+.06*sin(t*1.3),.78+.05*cos(t)),.55);
+          float b=blob(w,vec2(.92*asp+.05*cos(t*.9),.22+.06*sin(t*1.1)),.62);
+          float c=blob(w,vec2(.55*asp+.08*sin(t*.7),.05+.05*cos(t*1.4)),.45);
+          float mm=blob(w,m,.32);
+          col=mix(col,uA,a*.85);
+          col=mix(col,uB,b*.7);
+          col=mix(col,uC,c*.75);
+          col=mix(col,uA,mm*.35);
+          // estrelas que piscam
+          for(int i=0;i<7;i++){
+            float fi=float(i);
+            vec2 sp=vec2(hash(vec2(fi,1.3))*asp, .15+hash(vec2(fi,7.1))*.8);
+            sp+=.015*vec2(sin(uTime*.5+fi),cos(uTime*.4+fi*2.));
+            float s=.012+.014*hash(vec2(fi,3.3));
+            float tw=.55+.45*sin(uTime*1.6+fi*1.7);
+            vec2 q=p-sp; float ang=uTime*.15+fi; q=mat2(cos(ang),-sin(ang),sin(ang),cos(ang))*q;
+            float d=sdStar(q,s,.45);
+            col=mix(col,uStar,smoothstep(.003,0.,d)*tw*.9);
+            col+=uStar*.06*tw*smoothstep(.06,0.,length(q));
+          }
+          col+= (hash(vUv*uRes+fract(uTime))-.5)*.025; // grão
+          gl_FragColor=vec4(col,1.);
+        }`
+    });
+    scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2), mat));
+    const hero = canvas.parentElement;
+    const target = new THREE.Vector2(.7,.5);
+    function size(){ const r=hero.getBoundingClientRect(); renderer.setSize(r.width, r.height, false); uniforms.uRes.value.set(r.width, r.height); }
+    size(); addEventListener('resize', size);
+    hero.addEventListener('pointermove', e=>{ const r=hero.getBoundingClientRect(); target.set((e.clientX-r.left)/r.width, 1-(e.clientY-r.top)/r.height); });
+    new IntersectionObserver(es=>{ heroVisible = es[0].isIntersecting; }).observe(hero);
+    const clock = new THREE.Clock();
+    function loop(){
+      requestAnimationFrame(loop);
+      if(!heroVisible || document.hidden) return;
+      uniforms.uTime.value = clock.getElapsedTime();
+      uniforms.uMouse.value.lerp(target, .05);
+      renderer.render(scene, camera);
+    }
+    if(reduce){ renderer.render(scene,camera); } else loop();
+    // tema
+    const mq = matchMedia('(prefers-color-scheme: dark)');
+    const retheme = ()=>{ colorsFromTokens(); if(reduce) renderer.render(scene,camera); drawStars(); };
+    mq.addEventListener && mq.addEventListener('change', retheme);
+    new MutationObserver(retheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  }catch(e){ canvas.style.background='radial-gradient(circle at 20% 20%, var(--blob-a), transparent 55%), radial-gradient(circle at 85% 80%, var(--blob-b), transparent 55%), var(--blob-bg)'; }
+
+  /* ---------- Estrelinhas da faixa azul (canvas 2D) ---------- */
+  const sc = document.getElementById('stars');
+  function drawStars(){
+    const r = sc.parentElement.getBoundingClientRect(); const d=Math.min(devicePixelRatio,2);
+    sc.width=r.width*d; sc.height=r.height*d; sc.style.width=r.width+'px'; sc.style.height=r.height+'px';
+    const g=sc.getContext('2d'); g.scale(d,d); g.clearRect(0,0,r.width,r.height);
+    let s=7; const rnd=()=> (s=(s*9301+49297)%233280)/233280;
+    for(let i=0;i<70;i++){ g.fillStyle = i%9===0 ? '#F3B98A' : 'rgba(255,240,225,'+(.25+rnd()*.6)+')';
+      g.beginPath(); g.arc(rnd()*r.width, rnd()*r.height, rnd()*1.6+.4, 0, Math.PI*2); g.fill(); }
+  }
+  drawStars(); addEventListener('resize', drawStars);
+
+  /* ---------- Copiar ---------- */
+  const toast = document.getElementById('toast'); let tt;
+  function say(msg){ toast.textContent=msg; toast.hidden=false; clearTimeout(tt); tt=setTimeout(()=>toast.hidden=true,1800); }
+  document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
+    const el=document.getElementById(b.dataset.copy); const txt=el.textContent.trim();
+    const fallback=()=>{ const rg=document.createRange(); rg.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(rg); say('Texto selecionado'); };
+    try{ navigator.clipboard.writeText(txt).then(()=>say('Copiado!'), fallback); }catch(e){ fallback(); }
+  }));
+
+  /* ---------- GSAP ---------- */
+  if(!window.gsap || reduce) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // entrada do hero (parte de um estado visível: só transform)
+  const tl = gsap.timeline({defaults:{ease:'power3.out'}});
+  tl.from('#logoBadge',{scale:.6,rotate:-25,duration:1,ease:'back.out(1.7)'})
+    .from('#heroTitle .w',{yPercent:60,rotate:4,duration:.9,stagger:.06},'-=.7')
+    .from('#archHero .arch',{y:40,scale:.94,duration:1.1},'-=.9')
+    .from('.sticker',{scale:0,duration:.6,stagger:.12,ease:'back.out(2.2)'},'-=.6')
+    .from('.star-deco',{scale:0,rotate:-90,duration:.7,stagger:.1,ease:'back.out(2)'},'-=.6');
+  gsap.to('.star-deco.a',{rotate:20,y:-8,duration:2.6,repeat:-1,yoyo:true,ease:'sine.inOut'});
+  gsap.to('.star-deco.b',{rotate:-25,y:6,duration:3.1,repeat:-1,yoyo:true,ease:'sine.inOut'});
+
+  // marquee infinito
+  const mq = document.getElementById('marquee');
+  const loopTw = gsap.to(mq,{xPercent:-50,duration:22,ease:'none',repeat:-1});
+  ScrollTrigger.create({onUpdate:self=>{ gsap.to(loopTw,{timeScale:1+Math.min(Math.abs(self.getVelocity())/400,4)*(self.direction),duration:.2,overwrite:true}); gsap.to(loopTw,{timeScale:1,duration:1.2,delay:.2}); }});
+
+  // parallax dentro das molduras
+  gsap.utils.toArray('img[data-par]').forEach(img=>{
+    gsap.fromTo(img,{yPercent:-8},{yPercent:4,ease:'none',scrollTrigger:{trigger:img.parentElement,start:'top bottom',end:'bottom top',scrub:.6}});
+  });
+
+  // galeria e cards sobem levemente (sem esconder)
+  ScrollTrigger.batch('.g-item, .side, .look, .info-row',{start:'top 92%',once:true,
+    onEnter:els=>gsap.from(els,{y:36,scale:.97,duration:.9,stagger:.08,ease:'power3.out'})});
+
+  gsap.fromTo('#giftFrame',{rotate:-8,y:30},{rotate:-2.5,y:0,ease:'none',scrollTrigger:{trigger:'#giftFrame',start:'top bottom',end:'center center',scrub:.8}});
+
+  // inclinação 3D nos looks
+  document.querySelectorAll('.look').forEach(card=>{
+    const rx=gsap.quickTo(card,'rotationX',{duration:.5,ease:'power3'}), ry=gsap.quickTo(card,'rotationY',{duration:.5,ease:'power3'});
+    gsap.set(card,{transformPerspective:900});
+    card.addEventListener('pointermove',e=>{ if(e.pointerType!=='mouse') return; const r=card.getBoundingClientRect(); ry(((e.clientX-r.left)/r.width-.5)*10); rx(-((e.clientY-r.top)/r.height-.5)*10); });
+    card.addEventListener('pointerleave',()=>{ rx(0); ry(0); });
+  });
+
+  addEventListener('load',()=>ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>
